@@ -52,6 +52,8 @@ Security-tool experimentation
 | 💻 Future VM Range | 10.0.0.3–10.0.0.99 |
 # 🛠️ Lab Setup Procedure
 
+
+
 ---
 
 ## Step 1. Install 7-Zip
@@ -74,7 +76,50 @@ A dedicated NAT Network was created in VirtualBox.
 
 **Configuration:** Network Name: NatNetwork IPv4 Prefix: 10.0.0.0/24 DHCP: Enabled IPv6: Disabled
 
-![Oracle VirtualBox Manager](URL_TO_YOUR_SCREENSHOT_IMAGE_HERE)
+<img width="1362" height="724" alt="image" src="https://github.com/user-attachments/assets/2c14a764-1a05-4ecd-8d5c-697d75bd5a3c" />
+A NAT Network was selected because multiple virtual machines connected to the same NAT Network can communicate with one another while also having outbound network connectivity.
+
+This will allow future attacker and target VMs to communicate within the lab
+## Step 4. Import Kali Linux
+
+The Kali Linux virtual machine was downloaded from the official Kali Linux website and imported into VirtualBox.
+
+The VM network adapter was configured as follows:
+
+```text
+Adapter 1
+Attached to: NAT Network
+Network: NatNetwork
+Adapter Type: Intel PRO/1000 MT Desktop
+```
+
+The VM was allocated:
+
+```text
+RAM: 2048 MB
+```
+<img width="1366" height="662" alt="image" src="https://github.com/user-attachments/assets/506b0bde-48fc-4ec7-8488-14a49a805288" />
+A shared folder was also configured for transferring required files between the host operating system and the Kali VM.
+##  Step 5. Configure the Kali Linux Network
+
+The Kali Linux network configuration was checked and configured with a consistent IPv4 address.
+
+Example configuration:
+
+```text
+IP Address: 10.0.0.2
+Subnet Mask: 255.255.255.0
+Gateway: 10.0.0.1
+DNS: 8.8.8.8
+```
+
+A consistent IP address makes it easier to document the lab and reference the Kali machine in future exercises.
+<img width="1366" height="662" alt="image" src="https://github.com/user-attachments/assets/392deb45-25a9-42b6-a9d0-ea26b7f235d4" />
+
+
+
+
+
 
 ## 🌐 Socials:
 [![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discord.gg/muskandevops) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/https://www.linkedin.com/in/muskan-zaheer-165b89433) [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/@www.youtube.com/@LearnenglishwithMuskanAndPihu) 
