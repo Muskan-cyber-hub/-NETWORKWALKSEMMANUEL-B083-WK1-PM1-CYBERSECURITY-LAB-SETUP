@@ -1,4 +1,4 @@
-# -NETWORKWALKSEMMANUEL-B083-WK1-PM1-CYBERSECURITY-LAB-SETUP
+#  🔐  NETWORKWALKSEMMANUEL-B083-WK1-PM1-CYBERSECURITY-LAB-SETUP
  # 📌 Project Overview
 This project focuses on setting up a virtual cybersecurity and penetration-testing laboratory using VirtualBox and Kali Linux.
 
@@ -17,7 +17,7 @@ Verify network connectivity and DNS resolution.
 Take a clean VM snapshot for recovery.
 Document the complete setup process.
 Prepare the environment for future cybersecurity projects.
-# 🛡️ Purpose of the Lab<img width="678" height="704" alt="download" src="https://github.com/user-attachments/assets/dbc60b5a-0143-45dd-8454-9141cb60e3ea" />
+# 🛡️ Purpose of the Lab
 
 The lab provides an isolated and controlled environment for cybersecurity learning and authorized security testing.
 
@@ -32,6 +32,49 @@ Exploitation practice
 Security-tool experimentation
 ⚠️ Important: This laboratory must only be used for systems that you own or have explicit permission to test. Do not use the lab or its tools to attack unauthorized systems.
 # 🏗️ Lab Architecture
+#<img width="700" height="500" alt="download" src="https://github.com/user-attachments/assets/dbc60b5a-0143-45dd-8454-9141cb60e3ea" />
+
+ ## 🖥️ Lab Configuration
+
+| Component | Configuration |
+|:---|:---|
+| 🖥️ Host OS | Windows 10 |
+| 🧠 Host RAM | 8 GB |
+| ⚡ Processor | Intel Core i7 |
+| 🧰 Hypervisor | VirtualBox 7.2 |
+| 🐉 Security OS | Kali Linux 2026.2 |
+| 🧠 Kali RAM | 2048 MB |
+| 🌐 Virtual Network | NAT Network |
+| 🌐 Network Address | 10.0.0.0/24 |
+| 🔐 Kali IP Address | 10.0.0.2/24 |
+| 🚪 Default Gateway | 10.0.0.1 |
+| 🌍 DNS Server | 8.8.8.8 |
+| 💻 Future VM Range | 10.0.0.3–10.0.0.99 |
+# 🛠️ Lab Setup Procedure
+
+---
+
+## Step 1. Install 7-Zip
+
+7-Zip was installed to extract the Kali Linux virtual-machine package, which may be distributed as a `.7z` archive.
+
+**Tool:** 7-Zip
+
+---
+
+## Step 2. Install VirtualBox
+
+VirtualBox was installed as the hypervisor.
+
+---
+
+## Step 3. Create the NAT Network
+
+A dedicated NAT Network was created in VirtualBox.
+
+**Configuration:** Network Name: NatNetwork IPv4 Prefix: 10.0.0.0/24 DHCP: Enabled IPv6: Disabled
+
+![Oracle VirtualBox Manager](URL_TO_YOUR_SCREENSHOT_IMAGE_HERE)
 
 ## 🌐 Socials:
 [![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discord.gg/muskandevops) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/https://www.linkedin.com/in/muskan-zaheer-165b89433) [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/@www.youtube.com/@LearnenglishwithMuskanAndPihu) 
