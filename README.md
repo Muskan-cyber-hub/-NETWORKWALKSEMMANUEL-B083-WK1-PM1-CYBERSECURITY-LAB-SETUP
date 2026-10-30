@@ -115,6 +115,130 @@ DNS: 8.8.8.8
 
 A consistent IP address makes it easier to document the lab and reference the Kali machine in future exercises.
 <img width="1366" height="662" alt="image" src="https://github.com/user-attachments/assets/392deb45-25a9-42b6-a9d0-ea26b7f235d4" />
+# 🔎 Lab Verification
+
+| ❇️ Test | 🧾 Command | 🎯 Expected Result |
+| --- | --- | --- |
+| 🌐 Check IP address | `ip a` | Correct Kali IP displayed |
+| 📡 Test gateway | `ping 10.0.0.1` | Successful replies |
+| 🌍 Test Internet connectivity | `ping 8.8.8.8` | Successful replies |
+| 🔎 Test DNS resolution | `nslookup networkwalks.com` | Domain resolves |
+| 🧰 Verify Nmap | `nmap --version` | Nmap version displayed |
+| 🔄 Verify snapshot | Restore snapshot and run `ip a` | Baseline configuration restored |
+
+## Example Results
+
+```text
+IP Address:
+10.0.0.2/24
+
+Gateway:
+10.0.0.1
+
+DNS:
+8.8.8.8
+```
+
+
+### 1. Download Required Tools
+
+- VirtualBox: https://www.virtualbox.org/
+- Kali Linux: https://www.kali.org/get-kali/
+- 7-Zip: https://www.7-zip.org/
+
+### 2. Virtual Machine Configuration
+
+1. Install Oracle VirtualBox.
+2. Download Kali Linux ISO.
+3. Create a new virtual machine.
+4. Select Linux and Debian 64-bit.
+5. Allocate RAM and CPU resources.
+6. Create a virtual hard disk.
+7. Attach Kali Linux ISO.
+8. Install Kali Linux.
+
+### 3. Network Configuration
+
+Open:
+
+VirtualBox → Settings → Network → Adapter 1
+
+Select NAT or NAT Network according to lab requirements.
+
+### 4. Network Verification
+
+Run these commands in Kali Linux:
+
+```bash
+ip addr
+ip route
+nmcli device status
+ping -c 4 1.1.1.1
+getent hosts kali.org
+```
+
+### 5. Static IP Configuration
+
+First identify the network connection:
+
+```bash
+nmcli connection show
+```
+
+Configure a static IP using your actual lab network details:
+
+```bash
+sudo nmcli connection modify "<CONNECTION_NAME>" ipv4.method manual ipv4.addresses "<IP_ADDRESS>/<PREFIX>" ipv4.gateway "<GATEWAY_IP>" ipv4.dns "<DNS_IP>"
+```
+
+Activate the connection:
+
+```bash
+sudo nmcli connection up "<CONNECTION_NAME>"
+```
+
+### 6. Troubleshooting
+
+Common issues:
+
+- Network connectivity problems
+- Incorrect IP configuration
+- DNS resolution errors
+- VirtualBox VT-x errors
+- Virtual machine startup problems
+
+### 7. Snapshot Creation
+
+After successfully configuring Kali Linux:
+
+1. Open VirtualBox.
+2. Select the Kali VM.
+3. Open Snapshots.
+4. Create a snapshot.
+
+Snapshot name:
+
+Clean Kali - Network Setup
+
+## What I Learned
+
+1. Difference between NAT and NAT Network.
+2. Virtual machine network configuration.
+3. Static IP configuration.
+4. Linux network troubleshooting.
+5. Virtual machine snapshot management.
+6. Basic cybersecurity lab preparation.
+
+## Author
+
+Muskan Zaheer
+
+Cybersecurity Internship  
+Networkwalks
+
+## Ethical Disclaimer
+
+This laboratory is intended for educational purposes. Perform security testing only on systems you own or have explicit permission to test.
 
 
 
